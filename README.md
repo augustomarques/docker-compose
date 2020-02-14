@@ -3,7 +3,7 @@
 # Files
 - Postgres (docker-compose-postgres.yml)
 - Rabbit (docker-compose-rabbit.yml)
-- MongoDB
+- MongoDB (docker-compose-mongodb.yml)
 
 ## Postgres
 Fornece um Postgres(5432) e um PgAdmin(16543)
