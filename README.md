@@ -1,24 +1,27 @@
 # Docker Compose
 
 # Files
-- Postgres (docker-compose-postgres.yml)
-- Rabbit (docker-compose-rabbit.yml)
-- MongoDB (docker-compose-mongodb.yml)
+- Postgres
+- MySQL
+- Rabbit
+- MongoDB
+- Redis
 
 ## Postgres
-Fornece um Postgres(5432) e um PgAdmin(16543)
-Execute o comando :
-> docker-compose -f docker-compose-postgres.yml up -d
+Fornece um Postgres (port: 5432) e um PgAdmin (port: 16543)
 
+## MySQL
+Fornece um MySQL (port: 3306)
 
 ## RabbitMQ
-Fornece um RabbitMQ(15672 - 5672)
-
-Execute o comando :
-> docker-compose -f docker-compose-rabbit.yml up -d
+Fornece um RabbitMQ (port: 15672)
 
 ## MongoDB
-Fornece um MongoDB(27017) e um Mongo Express(8010)
+Fornece um MongoDB (port: 27017) e um Mongo Express (port: 8010)
 
-Execute o comando :
-> docker-compose -f docker-compose-mongodb.yml up -d
+## Redis
+Fornece um Redis (port: 6379)
+
+
+### Para rodar qualquer aplicação, basta executar o comando abaixo dentro do respectivo diretório:
+> docker-compose up -d
