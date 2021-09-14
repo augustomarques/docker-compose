@@ -6,6 +6,7 @@
 - Rabbit
 - MongoDB
 - Redis
+- Kafka
 
 ## Postgres
 Fornece um Postgres (port: 5432) e um PgAdmin (port: 16543)
