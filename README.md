@@ -22,6 +22,8 @@ Fornece um MongoDB (port: 27017) e um Mongo Express (port: 8010)
 ## Redis
 Fornece um Redis (port: 6379)
 
+## Kafka
+Fornece um Kafka (port: 9092)
 
 ### Para rodar qualquer aplicação, basta executar o comando abaixo dentro do respectivo diretório:
 > docker-compose up -d
