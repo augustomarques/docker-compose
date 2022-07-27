@@ -1,16 +1,13 @@
-version: '3.3'
+version: "3.8"
+
 services:
-  db:
-    image: mysql:latest
-    restart: always
-    environment:
-      MYSQL_DATABASE: 'db'
-      MYSQL_ROOT_PASSWORD: 'password'
+  mysql:
+    container_name: mysql
+    image: mysql/mysql-server:8.0.29
     ports:
-      - '3306:3306'
-    expose:
-      - '3306'
-    volumes:
-      - my-db:/var/lib/mysql
-volumes:
-  my-db:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: db
+      MYSQL_ROOT_HOST: "%"
+    command: --lower_case_table_names=1
