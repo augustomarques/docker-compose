@@ -1,0 +1,40 @@
+version: '3'
+services:
+
+  # zipkin:
+  #   container_name: zipkin-service
+  #   image: openzipkin/zipkin:latest
+  #   restart: always
+  #   ports:
+  #     - "9411:9411"
+
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus:latest
+    restart: unless-stopped
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    networks:
+      - monitoring-network
+
+  grafana:
+    container_name: grafana
+    image: grafana/grafana:latest
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    depends_on:
+      - prometheus
+    networks:
+      - monitoring-network
+
+networks:
+  monitoring-network:
+    name: development
+    external: true
