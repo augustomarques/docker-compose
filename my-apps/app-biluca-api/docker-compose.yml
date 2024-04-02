@@ -2,7 +2,7 @@ version: "3.8"
 services:
   biluca-api:
     image: augustomarques/biluca
-    container_name: app-biluca-api
+    container_name: biluca-api
     # build: .
     restart: always
     environment:
