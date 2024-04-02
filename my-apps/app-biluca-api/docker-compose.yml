@@ -1,6 +1,6 @@
 version: "3.8"
 services:
-  api-login:
+  biluca-api:
     image: augustomarques/biluca
     container_name: app-biluca-api
     # build: .
@@ -11,7 +11,7 @@ services:
       DB_HOST: postgres
       DB_PORT: 5432
       DB_DATABASE: biluca
-      DB_USER: user-biluca
+      DB_USERNAME: user-biluca
       DB_PASSWORD: password-biluca
     ports:
       - "8080:8080"
