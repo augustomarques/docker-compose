@@ -10,10 +10,10 @@ route:
   repeat_interval: 1m
 
   routes:
-    - receiver: 'receiver-biluca-api'
+    - receiver: 'ops-biluca-api'
       match:
         system: 'biluca-api'
-    - receiver: 'receiver-where-is-my-money-api'
+    - receiver: 'ops-where-is-my-money-api'
       match:
         system: 'where-is-my-money-api'
 
