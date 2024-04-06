@@ -7,7 +7,8 @@ rule_files:
 
 alerting:
   alertmanagers:
-  - static_configs:
+  - scheme: http
+    static_configs:
     - targets:
       - alertmanager:9093
 
@@ -17,3 +18,8 @@ scrape_configs:
     static_configs:
     - targets:
       - "biluca-api:8080"
+  - job_name: "where-is-my-money-api"
+    metrics_path: /actuator/prometheus
+    static_configs:
+    - targets:
+      - "where-is-my-money-api:8080"
