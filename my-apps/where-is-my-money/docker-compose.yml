@@ -1,0 +1,24 @@
+version: "3.8"
+services:
+  where-is-my-money-api:
+    image: augustomarques/where-is-my-money-api
+    container_name: where-is-my-money-api
+    # build: .
+    restart: always
+    environment:
+      SPRING_PROFILES_ACTIVE: stage
+      SERVER_PORT: 8080
+      DB_URL: postgres
+      DB_PORT: 5432
+      DB_DATABASE: where-is-my-money
+      DB_USERNAME: user-where-is-my-money
+      DB_PASSWORD: password-where-is-my-money
+    ports:
+      - "8123:8080"
+    networks:
+      - where-is-my-money-network
+
+networks:
+  where-is-my-money-network:
+    name: development
+    external: true
